@@ -1,0 +1,22 @@
+services:
+  ollama:  # Ollama Service for LLM Models
+    image: ollama/ollama:latest
+    container_name: ollama-server
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+      - GIN_MODE=release
+      - OLLAMA_KEEP_ALIVE=-1
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama/models
+    networks:
+      - app-network
+
+volumes:
+  ollama_models:
+
+networks:
+  app-network:
+    driver: bridge
+
