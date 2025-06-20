@@ -13,5 +13,5 @@ Ollama hosted servers in Docker containers repo.
 2. Execute below bash command :
 
 ```
-bash run.sh
+bash pull_models.sh
 ```
